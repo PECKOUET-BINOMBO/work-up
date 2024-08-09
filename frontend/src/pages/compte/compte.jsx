@@ -1,4 +1,5 @@
 import React from "react";
+import "../../css/compte.css";
 import Navbar from "../../Components/navbar/navbar";
 import CompteLeft from "../../Components/compteLeft/compteLetf";
 import CompteRight from "../../Components/compteRight/compteRight";
