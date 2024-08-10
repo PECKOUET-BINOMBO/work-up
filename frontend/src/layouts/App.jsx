@@ -4,6 +4,9 @@ import Accueil from "../pages/accueil/accueil";
 import Mission from "../pages/mission";
 import Messagerie from "../pages/messagerie/messagerie";
 import Compte from "../pages/compte/compte";
+import Register from "../pages/auth/register";
+import Login from "../pages/auth/login";
+import ForgotForm from "../pages/auth/forgotForm";
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
         {/* <Route path="/mission/:id" element={<Mission />} /> */}
         <Route path="/messagerie" element={<Messagerie />} />
         <Route path="/compte" element={<Compte />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgot-form" element={<ForgotForm />} />
       </Routes>
     </div>
   );
