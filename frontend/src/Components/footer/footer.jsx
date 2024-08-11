@@ -54,21 +54,7 @@ function Footer() {
                   </li>
                 </ul>
               </div>
-              <div>
-               
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <Link to="#" className="hover:underline">
-                      Nos tarifs
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="hover:underline">
-                     Bientôt disponible : 
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              
             </div>
           </div>
           <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />

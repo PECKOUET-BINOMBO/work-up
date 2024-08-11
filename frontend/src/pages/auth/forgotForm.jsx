@@ -33,7 +33,7 @@ function forgotForm() {
               </div>
             </div>
             
-            <div className="my-10 flex items-center justify-center">
+            <div className="my-10 flex items-center">
               <button
                 type="button"
                 className="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"

@@ -7,6 +7,7 @@ import Compte from "../pages/compte/compte";
 import Register from "../pages/auth/register";
 import Login from "../pages/auth/login";
 import ForgotForm from "../pages/auth/forgotForm";
+import Besoin from "../pages/besoins/besoin";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-form" element={<ForgotForm />} />
+        <Route path="/besoin" element={<Besoin />} />
       </Routes>
     </div>
   );
