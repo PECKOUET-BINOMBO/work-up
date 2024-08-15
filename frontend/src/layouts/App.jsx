@@ -1,7 +1,7 @@
 import "../css/App.css";
 import { Route, Routes } from "react-router-dom";
 import Accueil from "../pages/accueil/accueil";
-import Mission from "../pages/mission";
+import Mission from "../pages/mission/mission";
 import Messagerie from "../pages/messagerie/messagerie";
 import Compte from "../pages/compte/compte";
 import Register from "../pages/auth/register";

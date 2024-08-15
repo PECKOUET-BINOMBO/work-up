@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
+  const location = useLocation();
+
   return (
     <div>
       <nav className="bg-black border-gray-200 dark:bg-gray-900 shadow">
@@ -48,50 +50,73 @@ function Navbar() {
               <li>
                 <Link
                   to="/"
-                  className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-orange-400 md:p-0 dark:text-white md:dark:text-blue-500"
-                  aria-current="page"
+                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 dark:md:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${
+                    location.pathname === "/"
+                      ? "text-orange-400"
+                      : "text-white"
+                  }`}
                 >
                   Accueil
                 </Link>
               </li>
               <li>
-                <Link to="/besoin"
-                  className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                <Link
+                  to="/besoin"
+                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 dark:md:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${
+                    location.pathname === "/besoin"
+                      ? "text-orange-400"
+                      : "text-white"
+                  }`}
                 >
                   Ajouter un besoin
                 </Link>
               </li>
               <li>
-                <Link to="/messagerie"
-                  className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                <Link
+                  to="/messagerie"
+                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 dark:md:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${
+                    location.pathname === "/messagerie"
+                      ? "text-orange-400"
+                      : "text-white"
+                  }`}
                 >
-                  Messagerie <sup className="rounded-full bg-orange-500 font-bold px-1">2</sup>
+                  Messagerie{" "}
+                  <sup className="rounded-full bg-orange-500 font-bold px-1 text-white">
+                    2
+                  </sup>
                 </Link>
-                
               </li>
               <li>
-                <Link to="/compte"
-                  className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                <Link
+                  to="/compte"
+                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 dark:md:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${
+                    location.pathname === "/compte"
+                      ? "text-orange-400"
+                      : "text-white"
+                  }`}
                 >
                   Mon compte
                 </Link>
               </li>
               <li>
-                <Link to="/register"
+                <Link
+                  to="/register"
                   className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   S'inscrire
                 </Link>
               </li>
               <li>
-                <Link to="/login"
+                <Link
+                  to="/login"
                   className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Se connecter
                 </Link>
               </li>
               <li>
-                <Link to="#"
+                <Link
+                  to="#"
                   className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Se déconnecter
