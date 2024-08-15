@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Pagination from "../pagination/pagination";
 
-function CompteRight() {
+function CompteRight({ onDelete }) {
   return (
     <div className="flex flex-col w-9/12">
       <div className="w-full mb-4 inline-block">
@@ -84,7 +84,7 @@ function CompteRight() {
                       >
                         Modifier
                       </Link>
-                      <Link
+                      <Link onClick={() => onDelete("élément")}
                         to="#"
                         className="font-medium text-red-600 dark:text-red-500 hover:underline"
                       >
@@ -129,7 +129,7 @@ function CompteRight() {
                       >
                         Modifier
                       </Link>
-                      <Link
+                      <Link onClick={() => onDelete("élément")}
                         to="#"
                         className="font-medium text-red-600 dark:text-red-500 hover:underline"
                       >
@@ -174,7 +174,7 @@ function CompteRight() {
                       >
                         Modifier
                       </Link>
-                      <Link
+                      <Link onClick={() => onDelete("élément")}
                         to="#"
                         className="font-medium text-red-600 dark:text-red-500 hover:underline"
                       >
@@ -219,7 +219,7 @@ function CompteRight() {
                       >
                         Modifier
                       </Link>
-                      <Link
+                      <Link onClick={() => onDelete("élément")}
                         to="#"
                         className="font-medium text-red-600 dark:text-red-500 hover:underline"
                       >
@@ -252,7 +252,7 @@ function CompteRight() {
                     <td className="px-6 py-4">Silver</td>
                     <td className="px-6 py-4">PC</td>
                     <td className="flex items-center px-6 py-4">
-                      <Link
+                      <Link 
                         to="#"
                         className="font-medium text-green-600 dark:text-blue-500 hover:underline"
                       >
@@ -264,7 +264,7 @@ function CompteRight() {
                       >
                         Modifier
                       </Link>
-                      <Link
+                      <Link onClick={() => onDelete("élément")}
                         to="#"
                         className="font-medium text-red-600 dark:text-red-500 hover:underline"
                       >
@@ -383,7 +383,7 @@ function CompteRight() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <button
+                  <button onClick={() => onDelete("élément")}
                     type="button"
                     className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                   >
@@ -480,7 +480,7 @@ function CompteRight() {
                       >
                         Modifier
                       </Link>
-                      <Link
+                      <Link onClick={() => onDelete("élément")}
                         to="#"
                         className="font-medium text-red-600 dark:text-red-500 hover:underline"
                       >
@@ -526,7 +526,7 @@ function CompteRight() {
                       >
                         Modifier
                       </Link>
-                      <Link
+                      <Link onClick={() => onDelete("élément")}
                         to="#"
                         className="font-medium text-red-600 dark:text-red-500 hover:underline"
                       >
@@ -560,7 +560,7 @@ function CompteRight() {
                     <td className="px-6 py-4">Accessories</td>
                     <td className="px-6 py-4">Yes</td>
                     <td className="flex items-center px-6 py-4">
-                      <Link
+                      <Link 
                         to="#"
                         className="font-medium text-green-600 dark:text-blue-500 hover:underline"
                       >
@@ -572,7 +572,7 @@ function CompteRight() {
                       >
                         Modifier
                       </Link>
-                      <Link
+                      <Link onClick={() => onDelete("élément")}
                         to="#"
                         className="font-medium text-red-600 dark:text-red-500 hover:underline"
                       >
@@ -618,7 +618,7 @@ function CompteRight() {
                       >
                         Modifier
                       </Link>
-                      <Link
+                      <Link onClick={() => onDelete("élément")}
                         to="#"
                         className="font-medium text-red-600 dark:text-red-500 hover:underline"
                       >
@@ -664,7 +664,7 @@ function CompteRight() {
                       >
                         Modifier
                       </Link>
-                      <Link
+                      <Link onClick={() => onDelete("élément")}
                         to="#"
                         className="font-medium text-red-600 dark:text-red-500 hover:underline"
                       >
@@ -782,7 +782,7 @@ function CompteRight() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <button
+                  <button onClick={() => onDelete("élément")}
                     type="button"
                     className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                   >

@@ -1,0 +1,1 @@
+installation de motion et AnimatePresence de framer-motion pour les animations avec : npm install framer-motion
