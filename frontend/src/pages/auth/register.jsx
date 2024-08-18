@@ -46,7 +46,7 @@ function Register() {
               </div>
 
               <div className="w-5/12 mx-auto my-5">
-              {/* TODO remplacer image par une qjui explique mieux les étapes de l'inscription, l'ajout ou consultation... */}
+              {/* TODO remplacer image par une qui explique mieux les étapes de l'inscription, l'ajout ou consultation... */}
                 <img
                   src={comment}
                   alt="comment"
