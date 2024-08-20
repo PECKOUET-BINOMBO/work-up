@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
+use App\Models\Besoin;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
@@ -142,11 +143,72 @@ class AuthController extends Controller
             return response()->json([
                 'message' => 'Déconnexion réussie',
             ], 200);
-        }else {
+        } else {
 
             return response()->json([
                 'message' => 'Non trouvé',
             ], 404);
         }
+    }
+
+
+    /**
+     * Display a listing of the users.
+     */
+    public function listUsers()
+    {
+        $users = User::all();
+        return response()->json([
+            "message" => "Liste des utilisateurs",
+            $users
+        ]);
+    }
+
+    /**
+     * Display the specified user.
+     */
+    public function showUser(string $id)
+    {
+        $user = User::findOrFail($id);
+        return response()->json($user);
+    }
+
+    /**
+     * Update the specified user in storage.
+     */
+    public function updateUser(Request $request, string $id)
+    {
+        $user = User::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+        ]);
+
+        $user->update($validatedData);
+
+        return response()->json([
+            'message' => 'Compte mis à jour',
+            'user' => $user
+        ]);
+    }
+
+    /**
+     * Remove the specified user from storage.
+     */
+    public function destroyUser(string $id)
+    {
+        $user = User::findOrFail($id);
+
+        $besoin = Besoin::findOrFail($id);
+
+        // Supprimer les annonces liées à l'utilisateur
+        $besoin->delete();
+
+        $user->delete();
+
+        return response()->json([
+            'message' => 'Compte supprimé'
+        ]);
     }
 }
