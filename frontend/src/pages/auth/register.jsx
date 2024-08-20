@@ -69,7 +69,7 @@ function Register() {
                         htmlFor="client"
                         className="text-orange-500 font-bold"
                       >
-                        Client
+                        Client <span className="text-red-600 font-bold">*</span>
                       </label>
                       <input
                         type="radio"
@@ -89,7 +89,7 @@ function Register() {
                         htmlFor="prestataire"
                         className="text-orange-500 font-bold"
                       >
-                        Prestataire
+                        Prestataire <span className="text-red-600 font-bold">*</span>
                       </label>
                       <input
                         type="radio"
@@ -135,7 +135,7 @@ function Register() {
                       htmlFor="name"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Nom(s)
+                      Nom(s) <span className="text-red-600 font-bold">*</span>
                     </label>
                     <input
                       type="text"
@@ -150,7 +150,7 @@ function Register() {
                       htmlFor="prenom"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Prénom(s)
+                      Prénom(s) <span className="text-red-600 font-bold">*</span>
                     </label>
                     <input
                       type="text"
@@ -168,7 +168,7 @@ function Register() {
                       htmlFor="email"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Adresse e-mail
+                      Adresse e-mail <span className="text-red-600 font-bold">*</span>
                     </label>
                     <input
                       type="email"
@@ -183,7 +183,7 @@ function Register() {
                       htmlFor="phone"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Téléphone
+                      Téléphone <span className="text-red-600 font-bold">*</span>
                     </label>
                     <input
                       type="text"
@@ -194,14 +194,26 @@ function Register() {
                     />
                   </div>
                 </div>
-
+                <div className="relative z-0 w-full mb-5 group">
+                    <label
+                      htmlFor="password"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Photo de profil
+                    </label>
+                    <input
+                      type="file"
+                      id="profil"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+                    />
+                  </div>
                 <div className="">
                   <div className="relative z-0 w-full mb-5 group">
                     <label
                       htmlFor="password"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Mot de passe
+                      Mot de passe <span className="text-red-600 font-bold">*</span>
                     </label>
                     <input
                       type="password"

@@ -28,6 +28,9 @@ class AuthController extends Controller
             'email.email' => 'L\'adresse e-mail n\'est pas valide.',
             'email.unique' => 'L\'adresse e-mail est déjà utilisée.',
             'tel.required' => 'Le numéro de téléphone est obligatoire.',
+            'photo.image' => 'Le fichier doit être une image',
+            'photo.mimes' => 'Le fichier doit être de type jpeg, png, jpg, gif ou svg',
+            'photo.max' => 'Le fichier ne doit pas dépasser 2 Mo',
             'password.required' => 'Le mot de passe est obligatoire.',
             'password.min' => 'Le mot de passe doit contenir au moins 4 caractères.',
         ];
@@ -38,8 +41,17 @@ class AuthController extends Controller
             'prenom' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'tel' => 'required|string',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'password' => 'required|string|min:4',
         ], $messages);
+
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $photoName = time() . '.' . $photo->extension();
+            $photo->move(public_path('profil'), $photoName);
+        } else {
+            $photoName = 'default.png';
+        }
 
         $user = User::create([
             'profil' => $validatedData['profil'],
@@ -47,6 +59,7 @@ class AuthController extends Controller
             'prenom' => $validatedData['prenom'],
             'email' => $validatedData['email'],
             'tel' => $validatedData['tel'],
+            'photo' => $photoName,
             'password' => Hash::make($validatedData['password']),
         ]);
 
